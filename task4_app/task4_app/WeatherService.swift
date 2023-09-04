@@ -9,7 +9,7 @@ public final class WeatherService: NSObject {
     
     private let locationManager = CLLocationManager()
     private let API_KEY = "a6ca8e91088a21012d7917d0753e0796"
-    private var completionHandaler: ((Werather) -> Void)?
+    private var completionHandler: ((Weather) -> Void)?
     
     
     public override init() {
@@ -19,9 +19,9 @@ public final class WeatherService: NSObject {
     
     
     
-    public func LoadWeatherData(_ completionHandaler: @escaping((Werather) -> Void) ){
+    public func LoadWeatherData(_ completionHandler: @escaping((Weather) -> Void) ){
         
-        self.completionHandaler = completionHandaler
+        self.completionHandler = completionHandler
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
@@ -40,7 +40,7 @@ public final class WeatherService: NSObject {
             
             guard error == nil , let data = data else {return}
             if let response = try? JSONDecoder().decode(APIResponse.self, from: data) {
-                self.completionHandaler?(Werather(response: response))
+                self.completionHandler?(Weather(response: response))
             }
         }.resume()
     }
