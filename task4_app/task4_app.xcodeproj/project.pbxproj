@@ -11,6 +11,7 @@
 		3892A5AA2AA5CDAB004FA5C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892A5A92AA5CDAB004FA5C5 /* ContentView.swift */; };
 		3892A5AC2AA5CDAC004FA5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3892A5AB2AA5CDAC004FA5C5 /* Assets.xcassets */; };
 		3892A5AF2AA5CDAC004FA5C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3892A5AE2AA5CDAC004FA5C5 /* Preview Assets.xcassets */; };
+		3892A5B62AA5CE0A004FA5C5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892A5B52AA5CE0A004FA5C5 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3892A5A92AA5CDAB004FA5C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3892A5AB2AA5CDAC004FA5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3892A5AE2AA5CDAC004FA5C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3892A5B52AA5CE0A004FA5C5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				3892A5A72AA5CDAB004FA5C5 /* task4_appApp.swift */,
 				3892A5A92AA5CDAB004FA5C5 /* ContentView.swift */,
+				3892A5B52AA5CE0A004FA5C5 /* WeatherService.swift */,
 				3892A5AB2AA5CDAC004FA5C5 /* Assets.xcassets */,
 				3892A5AD2AA5CDAC004FA5C5 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3892A5AA2AA5CDAB004FA5C5 /* ContentView.swift in Sources */,
+				3892A5B62AA5CE0A004FA5C5 /* WeatherService.swift in Sources */,
 				3892A5A82AA5CDAB004FA5C5 /* task4_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
