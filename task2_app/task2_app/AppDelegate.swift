@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  task2_app
-//
-//  Created by Ghaiath Alhereh on 04.09.23.
-//
+
 
 import UIKit
 
