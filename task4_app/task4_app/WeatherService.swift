@@ -5,7 +5,7 @@ import CoreLocation
 
 
 public final class WeatherService: NSObject {
-    
+ //   private let API_KEY = "YOUR_API_KEY" // Replace with your own API key
     
     private let locationManager = CLLocationManager()
     private let API_KEY = "a6ca8e91088a21012d7917d0753e0796"
@@ -30,11 +30,11 @@ public final class WeatherService: NSObject {
     private func makeDataRequest(forCoordinates coordinates: CLLocationCoordinate2D) {
         
         
-        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon={\(coordinates.longitude)&appid=\(API_KEY)&units=metric"
+        guard let urlString =       "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric"
             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        
-        
+    
         guard let url = URL(string: urlString ) else { return}
+        
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
@@ -48,10 +48,10 @@ public final class WeatherService: NSObject {
 
 
 extension WeatherService : CLLocationManagerDelegate {
-    public func locationManager(_ manager: CLLocationManager,didUpdateLocations Locations: [CLLocation] ) {
+    public func locationManager(_ manager: CLLocationManager,didUpdateLocations locations: [CLLocation] ) {
         
-        guard let location = Locations.first else {return}
-        makeDataRequest(forCoordinates: location.coordinate)
+        guard let location = locations.first else { return }
+           makeDataRequest(forCoordinates: location.coordinate)
     }
     
     
@@ -76,8 +76,12 @@ struct APIResponse: Decodable {
 
 struct APIMain:Decodable {
     
-    let temp: Double
     
+
+    let temp: Double
+    let temp_max: Double
+    let temp_min: Double
+
 }
 
 

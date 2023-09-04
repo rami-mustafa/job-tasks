@@ -11,7 +11,9 @@ import SwiftUI
 struct task4_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let weatherService = WeatherService()
+            ContentView(viewModel: WeatherViewModel(weatherService: weatherService))
+            //ContentView(viewModel: viewModel)
         }
     }
 }

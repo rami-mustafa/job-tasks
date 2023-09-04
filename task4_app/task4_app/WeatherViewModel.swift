@@ -4,26 +4,25 @@ import Foundation
 
 private let defaultIcon = "❓"
 private let iconMap = [
-
-    "Drizzle" : "🌨",
-    "Thunderstorm" : "🌪 ",
-    "Rain" : "🌧",
-    "Snow" : "🌨",
-    "Clear" : "🌤",
-    "Clouds" : "🌥",
-
-
-
+  "Drizzle" : "🌧",
+  "Thunderstorm" : "☀️☀️",
+  "Rain": "🌧",
+  "Snow": "❄️",
+  "Clear": "☀️",
+  "Clouds" : "☁️",
 ]
 
 
 
-public class WeatherViewModel  {
+public class WeatherViewModel : ObservableObject {
     
-     var cityName: String = "City Name"
-     var temperature: String = "--"
-     var weatherDescription: String = "--"
-     var weatherIcon: String = defaultIcon
+    @Published var cityName: String = "City Name"
+    @Published var temperature: String = "--"
+    @Published var weatherDescription: String = "--"
+    @Published var weatherIcon: String = defaultIcon
+    @Published var tempMax: String = "--"
+    @Published var tempMin: String = "--"
+
     
     
     
@@ -41,9 +40,11 @@ public class WeatherViewModel  {
             
             DispatchQueue.main.async {
                 self.cityName =  weather.city
-                self.temperature = "\( weather.temperature) C"
+                self.temperature = "\( weather.temperature) ºC"
                 self.weatherDescription =  weather.description.capitalized
                 self.weatherIcon = iconMap[ weather.iconName] ?? defaultIcon
+                self.tempMax =  "Max :\( weather.max)ºC "
+                self.tempMin =  "Min :\( weather.min)ºC "
             }
         }
     }
