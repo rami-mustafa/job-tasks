@@ -16,6 +16,7 @@ enum TimerMode {
 }
 
 func secondsToMinutesAndSeconds(seconds: Int) -> String {
+    print("   :  \(seconds) ")
     let minutes = "\((seconds % 3600) / 60)"
     let seconds = "\((seconds % 3600) % 60)"
     let minuteStamp = minutes.count > 1 ? minutes : "0" + minutes

@@ -6,7 +6,7 @@ class TimerManager: ObservableObject {
     
     @Published var timerMode: TimerMode = .initial
     
-    @Published var secondsLeft = 60
+    @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
     
     var timer = Timer()
     
