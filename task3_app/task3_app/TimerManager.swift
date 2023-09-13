@@ -1,6 +1,7 @@
 
 import Foundation
 import SwiftUI
+import UserNotifications
 
 class TimerManager: ObservableObject {
     
@@ -21,8 +22,23 @@ class TimerManager: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             if self.secondsLeft == 0 {
                 self.reset()
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Hi "
+                content.subtitle = "Hİ RAMİ"
+                content.sound = UNNotificationSound.default
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+                
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request)
+                
+                print( "İŞlem tamam")
+
             }
             self.secondsLeft -= 1
+            print( "secondsLeft : \(self.secondsLeft)")
         })
     }
     

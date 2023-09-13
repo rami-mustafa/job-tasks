@@ -1,6 +1,7 @@
 
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     
@@ -20,6 +21,15 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 Text(secondsToMinutesAndSeconds(seconds: timerManager.secondsLeft))
                     .font(.system(size: 80))
                     .padding(.top , 80)
@@ -47,24 +57,17 @@ struct ContentView: View {
                         })
                 }
                 
-                HStack{
-                    
-                    if timerManager.timerMode == .initial {
-                        Picker(selection: $selectedPickerIndex, label: Text("")) {
-                            ForEach(0 ..< availableMinutes.count) {
-                                Text("\(self.availableMinutes[$0]) min")
-                            }
+                
+                
+                if timerManager.timerMode == .initial {
+                    Picker(selection: $selectedPickerIndex, label: Text("")) {
+                        ForEach(0 ..< availableMinutes.count) {
+                            Text("\(self.availableMinutes[$0]) min")
                         }
-                        
-                        Picker(selection: $SecondselectedPickerIndex, label: Text("")) {
-                            ForEach(0 ..< availableSecond.count) {
-                                Text("\(self.availableSecond[$0]) s")
-                            }
-                        }
-                        
                     }
                     
                 }
+                
                 Spacer()
             }
             .navigationBarTitle("RAMİ")
